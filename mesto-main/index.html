@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="pages/index.css" />
+  <title>Mesto</title>
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Логотип" class="header__image" />
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__content">
+          <img src="./images/Avatar.png" alt="Фото профиля" class="profile__image" />
+          <div class="profile__info">
+            <div class="profile__social">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit"></button>
+            </div>
+            <p class="profile__job">Исследователь океана</p>
+          </div>
+        </div>
+        <button type="button" class="profile__add"></button>
+      </section>
+      <section>
+        <ul class="elements"></ul>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">© 2022 Квасников Даниил</p>
+    </footer>
+    
+    <div class="popup popup_edit">
+      <div class="popup__container">
+        <button class="popup__close popup__close_edit" type="button" aria-label="закрыть"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form id="editForm" class="popup__form popup__form_edit" name="popupForm" novalidate>
+          <input id="name-input" type="text" name="popupName" class="popup__name popup__name_edit popup__input" minlength="2" maxlength="40" placeholder="Имя" required />
+          <span class="name-input-error"></span>
+          <input id="profession-input" type="text" name="popupJob" class="popup__job popup__job_edit popup__input" minlength="2" maxlength="200" placeholder="О себе" required />
+          <span class="profession-input-error"></span>
+          <button class="popup__button popup__button_edit" type="submit" aria-label="сохранить">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_add">
+      <div class="popup__container">
+        <button class="popup__close popup__close_add" type="button" aria-label="закрыть"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form id="addForm" class="popup__form popup__form_add" name="popupAddForm" novalidate>
+          <input id="add-name-input" type="text" name="popupAddName" class="popup__name popup__name_add popup__input" minlength="2" maxlength="30" placeholder="Название" required />
+          <span class="add-name-input-error"></span>
+          <input id="url-input" type="url" name="popupAddLink" class="popup__link popup__link_add popup__input" placeholder="Ссылка на картинку" required />
+          <span class="url-input-error"></span>
+          <button disabled="true" class="popup__button popup__button_add" type="submit" aria-label="Создать">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_img">
+      <div class="popup__container-image">
+        <button class="popup__close popup__close_image" type="button" aria-label="закрыть"></button>
+        <img src="#" alt="" class="popup__image" />
+        <h2 class="popup__title-image"></h2>
+      </div>
+    </div>
+  </div>
+
+  <template id="elements">
+    <li class="element">
+      <img src="#" alt="" class="element__image" />
+      <img src="./images/Trash.svg" alt="Удалить" class="element__del" />
+      <div class="element__footer">
+        <h2 class="element__title"></h2>
+        <button class="element__like" type="button" aria-label="лайк"></button>
+      </div>
+    </li>
+  </template>  
+  
+
+  <script type="module" src="./scripts/index.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.element__del {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.element__del:hover {
+	cursor: pointer;
+}
